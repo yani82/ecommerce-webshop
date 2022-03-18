@@ -1,10 +1,11 @@
 
-import Product from './components/products/Product';
+import React from 'react';
+import Products from './components/Product/Products';
 
 function App() {
   return (
-    <Product />
+    <Products />
   )
 }
 
-export default App
+export default App;
