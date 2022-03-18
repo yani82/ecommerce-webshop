@@ -1,5 +1,5 @@
 
-import Products from './components/Products/Products';
+import Product from './components/products/Product';
 
 function App() {
   return (
