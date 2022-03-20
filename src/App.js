@@ -1,10 +1,12 @@
 
 import React from 'react';
-import Products from './components/Product/Products';
+import Products from './components/Products/Products';
 
 function App() {
   return (
+    <div>
     <Products />
+    </div>
   )
 }
 
