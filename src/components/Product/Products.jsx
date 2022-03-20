@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
 
-import Product from './Product/Product'; 
+import Product from '../Product/Product'; 
 
 const products = [
     {id: 1, name: 'T-shirt', description: 'All Smiles in NY', price: '$45', image: 'https://cdn.shopify.com/s/files/1/0441/4967/0041/products/1smilesWHTtee_1024x1024@2x.jpg?v=1637607901'},
@@ -20,6 +20,6 @@ const Products = () => {
       </Grid>
   </main>  
     );
-}
+};
 
 export default Products; 
