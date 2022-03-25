@@ -7,8 +7,16 @@ const App = () => {
   const [products, setProducts] = useState([]); 
 
   const fetchProducts = async () => {
-    const response = await commerce.products.list(); 
+    const { data } = await commerce.products.list(); 
+
+    setProducts(data);
   }
+
+  // console.log('products')
+
+  useEffect(() => {
+    fetchProducts();
+  }, []) 
 
   return (
     <div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography } from '@material-ui/core';
 import { ShoppingCart } from '@material-ui/icons';
+// import { alpha } from '@material-ui/core/styles';
 import useStyles from './styles'; 
 
 import logo from '../../assets/commerce.png' 
