@@ -4,13 +4,8 @@ import { Grid } from '@material-ui/core';
 import Product from './Product/Product'; 
 import useStyles from './styles';
 
-const products = [
-    {id: 1, name: 'T-shirt', description: 'All Smiles in NY', price: '$45', image: 'https://cdn.shopify.com/s/files/1/0441/4967/0041/products/1smilesWHTtee_1024x1024@2x.jpg?v=1637607901'},
-    {id: 2, name: 'Hoodie', description: '2002 Lets Lepak zip-up', price: '$55', image: 'https://images.squarespace-cdn.com/content/v1/5a57bf09914e6b232aaa0bc7/1645323341850-1D0CAME772SST4F4CE0R/DSC03015.jpg?format=2500w'}
-];
-
-const Products = ({ product }) => {
-    const classes = useStyles()
+const Products = ({ products }) => {
+    const classes = useStyles();
 
     return (
   <main className={classes.content}>
