@@ -9,7 +9,7 @@ const products = [
     {id: 2, name: 'Hoodie', description: '2002 Lets Lepak zip-up', price: '$55', image: 'https://images.squarespace-cdn.com/content/v1/5a57bf09914e6b232aaa0bc7/1645323341850-1D0CAME772SST4F4CE0R/DSC03015.jpg?format=2500w'}
 ];
 
-const Products = () => {
+const Products = ({ product }) => {
     const classes = useStyles()
 
     return (

@@ -12,7 +12,7 @@ const App = () => {
     setProducts(data);
   }
 
-  // console.log('products')
+  // console.log(products)
 
   useEffect(() => {
     fetchProducts();
@@ -21,7 +21,7 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      <Products />
+      <Products products={products}/>
     </div>
   );
 }
