@@ -3,7 +3,7 @@ import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography } from '
 import { ShoppingCart } from '@material-ui/icons';
 // import { alpha } from '@material-ui/core/styles';
 import logo from '../../assets/commerce.png' 
-import useStyles from './styles'; 
+import useStyles from './navbarStyles'; 
 
 
 const Navbar = ({ totalItems }) => {
