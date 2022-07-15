@@ -31,9 +31,9 @@ const Product = ({ product, onAddToCart }) => {
   );
 }
 
-const mapStateToProps = (state) => ({})
+// const mapStateToProps = (state) => ({})
 
-const mapDispatchToProps = {}
+// const mapDispatchToProps = {}
 
 // export default connect(mapStateToProps, mapDispatchToProps)(Product)
 export default Product;
