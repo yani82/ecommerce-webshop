@@ -5,7 +5,8 @@ import logo from '../../assets/commerce.png'
 import useStyles from './navbarStyles'; 
 import { Link, useLocation } from 'react-router-dom'
 
-const PrimarySearchAppBar = ({ totalItems }) => {
+const Navbar = ({ totalItems }) => {
+    // PrimarySearchAppBar
     
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
     const classes = useStyles();
