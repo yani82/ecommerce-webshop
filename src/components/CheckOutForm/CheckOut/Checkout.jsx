@@ -12,10 +12,12 @@ const Checkout = () => {
     const classes = useStyles(); 
 
     const Confirmation = () => (order.customer ? (
+        <>
         <div> 
             Confirmation
         </div>
-    )
+        </>
+    );
 
     const Form = () => (activeStep === 0 
         ? <AddressForm /> 
