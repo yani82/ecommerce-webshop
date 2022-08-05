@@ -17,8 +17,8 @@ const Checkout = () => {
             Confirmation
         </div>
         </>
-    );
-
+    )
+    
     const Form = () => (activeStep === 0 
         ? <AddressForm /> 
         : <PaymentForm />); 
