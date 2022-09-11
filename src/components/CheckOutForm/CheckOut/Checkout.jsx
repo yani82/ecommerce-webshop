@@ -8,18 +8,26 @@ import { commerce } from '../../../lib/commerce';
 
 const steps = ['Shipping address', 'Payment details']; 
 
-const Checkout = () => {
+const Checkout = ({ cart }) => {
     const [activeStep, setActiveStep] = useState(0);
+    const [checkoutToken, setCheckoutToken] = useState(null); 
     const classes = useStyles(); 
 
     useEffect(() => {
         const generateToken = async () => {
             try {
-                const 
+                const token = await commerce.checkout.generateToken(cart.id, { type: 'cart' });
+
+                console.log(token); 
+
+                setCheckout(token); 
+
             } catch (error) {
                 
             }
         }
+        generateToken(); 
+        
     }, []);
 
     const Confirmation = () => (order.customer ? (
