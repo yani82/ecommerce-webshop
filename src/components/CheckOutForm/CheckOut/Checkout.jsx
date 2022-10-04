@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { CsssBaseline, Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider, Button} from '@material-ui/core';
+import { CssBaseline, Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider, Button} from '@material-ui/core';
 import { ScatterPlotSharp, SettingsPowerSharp } from '@material-ui/icons';
 import { Link, useHistory } from 'react-router-dom';
 import useStyles from './checkoutStyles'; 
 import AddressForm from '../AddressForm';
-import PaymentForm from '../PaymentForm'; 
+import PaymentForm from './PaymentForm'; 
 import { commerce } from '../../../lib/commerce'; 
 
 const steps = ['Shipping address', 'Payment details']; 
@@ -76,7 +76,7 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
 
   return (
     <>
-        <CsssBaseline /> 
+        <CssBaseline /> 
         <div className={classes.toolbar} />
         <main className={classes.layout}>
             <Paper className={classes.paper}>
