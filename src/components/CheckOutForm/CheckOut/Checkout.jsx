@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { CssBaseline, Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider, Button} from '@material-ui/core';
-import { ScatterPlotSharp, SettingsPowerSharp } from '@material-ui/icons';
+// import { ScatterPlotSharp, SettingsPowerSharp } from '@material-ui/icons';
 import { Link, useHistory } from 'react-router-dom';
 import useStyles from './checkoutStyles'; 
 import AddressForm from '../AddressForm';
@@ -43,8 +43,8 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
         nextStep(); 
     };
 
-    // or let 
-    const Confirmation = () => (order.customer ? (
+    // or const 
+    let Confirmation = () => (order.customer ? (
         <>
         <div> 
             <Typography variant="h5">Thank you for your purchase, {order.customer.firstname} {order.customer.lastname}!</Typography>

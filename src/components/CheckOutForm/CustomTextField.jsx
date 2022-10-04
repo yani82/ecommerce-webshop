@@ -18,7 +18,7 @@ function FormInput({ name, label, required }) {
             error = {isError}
             />
     </Grid>
-  )
+  );
 }
 
-export default CustomTextField
+export default FormInput; 
