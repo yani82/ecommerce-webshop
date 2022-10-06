@@ -12,7 +12,7 @@ const steps = ['Shipping address', 'Payment details'];
 const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
     const [activeStep, setActiveStep] = useState(0);
     const [checkoutToken, setCheckoutToken] = useState(null); 
-    const [shippingDate, setShippingData] = useState({});
+    const [shippingData, setShippingData] = useState({});
     const classes = useStyles(); 
     const history = useHistory();
     const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -24,7 +24,7 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
             try {
                 const token = await commerce.checkout.generateToken(cart.id, { type: 'cart' });
 
-                // console.log(token); 
+                console.log(token); 
 
                 setCheckoutToken(token); 
 
@@ -70,10 +70,10 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
         );
     }
     
-    const Form = () => (activeStep === 0 
+    const Form = () => activeStep === 0 
         ? <AddressForm checkoutToken={checkoutToken} nextStep={nextStep} setShippingData={setShippingData} test={test} /> 
-        : <PaymentForm checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} shippingData={shippingData} onCaptureCheckout={onCaptureCheckout} />); 
-
+        : <PaymentForm checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} shippingData={shippingData} onCaptureCheckout={onCaptureCheckout} />; 
+        // (before activeStep and after />)
   return (
     <>
         <CssBaseline /> 
@@ -82,9 +82,10 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
             <Paper className={classes.paper}>
                 <Typography variant="h4" align="center">Checkout</Typography>
                 <Stepper activeStep={activeStep} className={classes.stepper}>
-                    {steps.map((label) => (
-                        <Step key={label}>
-                            <StepLabel>{label}</StepLabel>
+                    {steps.map((step) => (
+                        <Step key={step}>
+                            <StepLabel>{step}</StepLabel>
+                            {/* replaced label with step */}
                         </Step>
                     ))}
                 </Stepper>
