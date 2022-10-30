@@ -13,6 +13,10 @@ const AddressForm = ({ checkoutToken, test }) => {
     const [shippingOptions, setShippingOptions] = useState([]);
     const [shippingOption, setShippingOption] = useState(''); 
     const methods = useForm(); 
+    const countries = Object.entries(shippingCountries).map(([code, name]) => ({ id: code, label: name }));
+    const subdivisions = Object.entries(shippingSubdivisions).map(([code, name]) => ({ id: code, label: name }));
+
+    // might have to remove ^ line 
 
     const fetchShippingCountries = async (checkoutTokenId) => {
         const { countries } = await commerce.services.localeListShippingCountries(checkoutTokenId); 
@@ -24,7 +28,7 @@ const AddressForm = ({ checkoutToken, test }) => {
 
     const fetchSubdivisions = async (countryCode) => {
         const { subdivisions } = await commerce.services.localeListSubdivisions(countryCode);
-    
+
         setShippingSubdivisions(subdivisions); 
         setShippingSubdivision(Object.keys(subdivisions)[0]);
     };
@@ -65,6 +69,7 @@ const AddressForm = ({ checkoutToken, test }) => {
                     <Select value={shippingCountry} fullWidth onChange={(e) => setShippingCountry(e.target.value)}>
                         {Object.entries(shippingCountries).map(([code, name]) => ({ id: code, label: name })).map((item) => (
                         <MenuItem key={item.id} value={item.id}>
+                            {/* might have to replace item with country */}
                             {item.label}
                         </MenuItem>
                         ))}
@@ -103,6 +108,7 @@ const AddressForm = ({ checkoutToken, test }) => {
 };
 
 export default AddressForm;
+// 2:27:20
 
 
 
