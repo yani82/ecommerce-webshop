@@ -39,7 +39,11 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
     }
     }, [cart]);
 
-    const test = (data) => {
+    const nextStep = () => setActiveStep(prevActiveStep) => prevActiveStep + 1;
+    const backStep = () => setActiveStep(prevActiveStep) => prevActiveStep - 1;
+
+    const next = (data) => {
+        // next not test?
         setShippingData(data); 
 
         nextStep(); 
@@ -73,7 +77,7 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
     }
     
     const Form = () => activeStep === 0 
-        ? <AddressForm checkoutToken={checkoutToken} nextStep={nextStep} setShippingData={setShippingData} test={test} /> 
+        ? <AddressForm checkoutToken={checkoutToken} nextStep={nextStep} setShippingData={setShippingData} next={next} /> 
         : <PaymentForm checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} shippingData={shippingData} onCaptureCheckout={onCaptureCheckout} />; 
         // (before activeStep and after />)
   return (
@@ -100,6 +104,5 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
 
 export default Checkout;
 
-// 2:13:27 
 // maybe change all style files back to just styles 
 
