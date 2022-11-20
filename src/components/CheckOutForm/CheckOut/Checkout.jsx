@@ -17,9 +17,7 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
     const [shippingData, setShippingData] = useState({});
     const classes = useStyles(); 
     const history = useHistory();
-    const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    const backStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1); 
-
+     
     useEffect(() => {
         if (cart.id) {
         const generateToken = async () => {
@@ -39,8 +37,8 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
     }
     }, [cart]);
 
-    const nextStep = () => setActiveStep(prevActiveStep) => prevActiveStep + 1;
-    const backStep = () => setActiveStep(prevActiveStep) => prevActiveStep - 1;
+    const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    const backStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1);
 
     const next = (data) => {
         // next not test?
