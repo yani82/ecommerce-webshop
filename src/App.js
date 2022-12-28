@@ -34,18 +34,18 @@ const App = () => {
     setCart(response.cart); 
   };
 
-  const handleRemoveFromCart = async (lineItemId) => {
-    // or (productId) 
-    // const { cart } = await commerce.cart.remove(productId);
-    const response = await commerce.cart.update(lineItemId, { quantity }); 
+  const handleRemoveFromCart = async (productId) => {
+    // or (lineItemId) 
+    const { cart } = await commerce.cart.remove(productId);
+    // Or update(lineItemId, { quantity }); 
 
-    setCart(response.cart);
+    setCart(cart);
   }; 
 
   const handleEmptyCart = async () => {
-    const response = await commerce.cart.empty();
+    const { cart } = await commerce.cart.empty();
     
-    setCart(response.cart); 
+    setCart(cart); 
   }
 
   const refreshCart = async () => {
