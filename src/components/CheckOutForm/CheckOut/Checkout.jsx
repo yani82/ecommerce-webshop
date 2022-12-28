@@ -72,7 +72,7 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
                 <Button component={Link} variant="outlined" type="button" to="/">Back to home</Button>
             </>
         );
-    }
+    };
     
     const Form = () => activeStep === 0 
         ? <AddressForm checkoutToken={checkoutToken} nextStep={nextStep} setShippingData={setShippingData} next={next} /> 
