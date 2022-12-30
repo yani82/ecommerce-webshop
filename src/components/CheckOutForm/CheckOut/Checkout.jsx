@@ -24,12 +24,13 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
             try {
                 const token = await commerce.checkout.generateToken(cart.id, { type: 'cart' });
 
-                console.log(token); 
+                // console.log(token); 
 
                 setCheckoutToken(token); 
 
             } catch {
-                if (activeStep !== steps.length) history.push('/');    
+                if (activeStep !== steps.length) history.push('/'); 
+                // history.pushState?   
             }
         }; 
 
@@ -47,7 +48,6 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
         nextStep(); 
     };
 
-    // or const 
     let Confirmation = () => (order.customer ? (
         <>
         <div> 
