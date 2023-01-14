@@ -70,7 +70,6 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
         <div> 
             <Typography variant="h5">Thank you for your purchase!</Typography>
             <Divider className={classes.divider} />
-            <Typography variant="subtitle2">Order ref: {order.customer_reference}</Typography>
         </div>
         <br />
         <Button component={Link} variant="outlined" type="button" to="/">Back to home</Button>
@@ -121,4 +120,5 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
 export default Checkout;
 
 // maybe change all style files back to just styles 
-
+//  run npm run build
+//  reveal finder 
