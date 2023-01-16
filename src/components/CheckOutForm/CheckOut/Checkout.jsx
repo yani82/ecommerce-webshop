@@ -18,6 +18,9 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
     const [isFinished, setIsFinished] = useState(false);
     const classes = useStyles(); 
     const history = useHistory();
+
+    const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    const backStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1);
      
     useEffect(() => {
         if (cart.id) {
@@ -38,9 +41,6 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
         generateToken(); 
     }
     }, [cart]);
-
-    const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    const backStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1);
 
     const next = (data) => {
         // next not test?
@@ -88,11 +88,11 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
                 <Button component={Link} variant="outlined" type="button" to="/">Back to home</Button>
             </>
         );
-    };
+    }
     
-    const Form = () => activeStep === 0 
+    const Form = () => (activeStep === 0 
         ? <AddressForm checkoutToken={checkoutToken} nextStep={nextStep} setShippingData={setShippingData} next={next} /> 
-        : <PaymentForm checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} shippingData={shippingData} onCaptureCheckout={onCaptureCheckout} timeout={timeout} />; 
+        : <PaymentForm checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} shippingData={shippingData} onCaptureCheckout={onCaptureCheckout} timeout={timeout} />); 
         // (before activeStep and after />)
   return (
     <>

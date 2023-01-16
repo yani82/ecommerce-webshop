@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { CssBaseline } from '@material-ui/core';  
 import { commerce } from './lib/commerce'; 
-import { Products, Navbar, Cart, CheckOut } from './components'; 
+import { Products, Navbar, Cart, Checkout } from './components'; 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const App = () => {
@@ -20,7 +20,7 @@ const App = () => {
 
   const fetchCart = async () => {
     setCart(await commerce.cart.retrieve());
-  }
+  };
 
   const handleAddToCart = async (productId, quantity) => {
     const item = await commerce.cart.add(productId, quantity);
@@ -40,6 +40,7 @@ const App = () => {
     // Or update(lineItemId, { quantity }); 
 
     setCart(cart);
+    // or (response.cart)
   }; 
 
   const handleEmptyCart = async () => {
@@ -97,7 +98,7 @@ const App = () => {
           </Route>
           <Route exact path="/checkout">
             {/* or Route path="/checkout" exact */}
-              <CheckOut cart={cart} order={order} onCaptureCheckout={handleCaptureCheckout} error={errorMessage} />
+              <Checkout cart={cart} order={order} onCaptureCheckout={handleCaptureCheckout} error={errorMessage} />
           </Route>
         </Switch>
       </div>
