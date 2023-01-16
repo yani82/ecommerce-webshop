@@ -34,6 +34,8 @@ const PaymentForm = ({ checkoutToken, nextStep, backStep, shippingData, onCaptur
 
             onCaptureCheckout(checkoutToken.id, orderData); 
 
+            
+
             nextStep(); 
         }
     }; 
