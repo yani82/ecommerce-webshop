@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { CssBaseline } from '@material-ui/core';  
 import { commerce } from './lib/commerce'; 
 import { Products, Navbar, Cart, Checkout } from './components'; 
-import { BrowserRouter as Router, switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// import { Switch } from "react-switch"; 
 
 const App = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false); 
@@ -81,7 +82,7 @@ const App = () => {
       <div style={{ display: 'flex' }}>
         <CssBaseline /> 
         <Navbar totalItems = {cart.total_items} handleDrawerToggle={handleDrawerToggle} />
-        <switch>
+        <Routes>
           <Route exact path="/">
             <Products products={products} onAddToCart={handleAddToCart} handleUpdateCartQty />
           </Route>
@@ -100,7 +101,7 @@ const App = () => {
             {/* or Route path="/checkout" exact */}
               <Checkout cart={cart} order={order} onCaptureCheckout={handleCaptureCheckout} error={errorMessage} />
           </Route>
-        </switch>
+        </Routes>
       </div>
     </Router>
   );
