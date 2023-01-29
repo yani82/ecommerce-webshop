@@ -4,7 +4,6 @@ import { CssBaseline } from '@material-ui/core';
 import { commerce } from './lib/commerce'; 
 import { Products, Navbar, Cart, Checkout } from './components'; 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import { Switch } from "react-switch"; 
 
 const App = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false); 
